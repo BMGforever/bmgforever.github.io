@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="de">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <title>Redirecting...</title>
     <script>
-      // Speichere den Pfad, den der Nutzer aufgerufen hat (z. B. /kalorientracker)
-      const redirectPath = window.location.pathname + window.location.search;
-      sessionStorage.setItem("redirectPath", redirectPath);
-      // Weiterleitung zur Startseite
-      window.location.replace("/");
+        // Speichere den Pfad, den der Nutzer aufgerufen hat (z. B. /kalorientracker)
+        const redirectPath = window.location.pathname + window.location.search;
+        sessionStorage.setItem("redirectPath", redirectPath);
+        // Weiterleitung zur Startseite
+        window.location.replace("/");
     </script>
-  </head>
-  <body>
+</head>
+
+<body>
     <p>Redirecting...</p>
-  </body>
+</body>
+
 </html>
