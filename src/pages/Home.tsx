@@ -1,7 +1,18 @@
 import { Link } from "react-router-dom";
 import { FileText, BookOpen } from "lucide-react";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const redirectPath = sessionStorage.getItem("redirectPath");
+    if (redirectPath) {
+      sessionStorage.removeItem("redirectPath");
+      navigate(redirectPath);
+    }
+  }, []);
   return (
     <div className="min-h-screen bg-[#f9fafb] flex flex-col items-center justify-center p-6">
       {/* Intro */}
@@ -89,6 +100,7 @@ const Home = () => {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {/* Self-Check App */}
           <a
             href="/mvps/self-check/index.html"
             target="_blank"
@@ -103,9 +115,27 @@ const Home = () => {
             </h3>
             <p className="text-[#475569]">
               Eine minimalistische App für regelmäßige Selbstuntersuchungen –
-              privat, achtsam & lokal gespeichert.
+              sich zu stressen ist viel zu anstrengend.
             </p>
           </a>
+
+          {/* Kalorientracker */}
+          <Link
+            to="/kalorientracker"
+            className="group bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition flex flex-col items-start border border-slate-200 hover:border-blue-500"
+          >
+            <span className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-200">
+              📱
+            </span>
+            <h3 className="text-xl font-semibold text-[#1e293b] mb-2">
+              Mein Kalorien-Tracker
+            </h3>
+            <p className="text-[#475569]">
+              Android-App zum Scannen & Tracken von Lebensmitteln. Weil
+              MyFitnesPal ganz schöne kacke geworden ist{" "}
+              <strong className="text-blue-600">Jetzt testen</strong>
+            </p>
+          </Link>
         </div>
       </div>
 
