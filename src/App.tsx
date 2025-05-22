@@ -5,6 +5,7 @@ import LeanCanvasPage from "./pages/LeanCanvasPage";
 import DailyAnalysisPage from "./pages/DailyAnalysisPage";
 import ScrollToTop from "./components/ScrollToTop";
 import KalorienTrackerPage from "./pages/kalorientrackerPage";
+import DatenschutzPage from "./pages/DatenschutzerklärungPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/canvas" element={<LeanCanvasPage />} />
         <Route path="/analyse" element={<DailyAnalysisPage />} />
         <Route path="/kalorientracker" element={<KalorienTrackerPage />} />
+        <Route path="/datenschutz" element={<DatenschutzPage />} />
       </Routes>
     </Router>
   );
